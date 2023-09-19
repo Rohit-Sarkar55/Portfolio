@@ -1,6 +1,6 @@
 
 import './App.css';
-import Banner from './Components/Banner';
+import Banner from './Components/Banners/Banner';
 import Features from './Components/Features';
 import Navbar from './Components/Navbar';
 

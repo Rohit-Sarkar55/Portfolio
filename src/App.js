@@ -1,12 +1,19 @@
 
 import './App.css';
+import Banner from './Components/Banner';
+import Features from './Components/Features';
 import Navbar from './Components/Navbar';
 
 function App() {
   return (
     <div className="w-full h-auto bg-bodyColor text-lightText px-4">
-      <h1>My Portfolio</h1>
-      <Navbar />
+      
+      
+      <div className="max-w-screen-2xl mx-auto">
+        <Navbar />    
+        <Banner/>
+        <Features />
+      </div>
     </div>
   );
 }

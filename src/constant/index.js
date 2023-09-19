@@ -4,6 +4,7 @@ export const navLinksData = [
         title: "Home",
         link: "home"
     },
+
     {
         _id : 2,
         title: "Skills",
@@ -25,5 +26,10 @@ export const navLinksData = [
         link: "contacts"
     }
 
-
+    ,
+    {
+        _id:6,
+        title:"Features",
+        link:"features"
+    }
 ]

@@ -1,12 +1,18 @@
 import React from "react";
+import Title from "./layouts/Title";
+import Card from "./Card";
+import { featuresData } from "../constant/featuresData";
 
 function Features(){
-    return <section id="features" className="w-full h-[800px] py-20 flex border-b-[1px] border-b-black">
+    return <section id="features" className="w-full py-20 border-b-[1px] border-b-black">
         
-        <div className="flex flex-col font-titleFont gap-4">
-        <h3 className="text-designColor uppercase text-sm tracking-wide font-light">Features</h3>
+        <Title title="Features" des="What I Do" />
+        <div className= "grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-20 pt-20" >
+            
+        {featuresData.map((item)=>{
+            return <Card key={item.id} item={item}/>
+        })}
         
-        <h1 className="text-5xl text-gray-300 font-bold capitalize">What I Do</h1>
         </div>
     </section>
 }

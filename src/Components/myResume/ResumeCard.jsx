@@ -2,7 +2,7 @@ import React from "react";
 
 function ResumeCard({title, subTitle, result , des}){
     return (
-        <div className="w-full h-1/3 bg-blue-600 group"> 
+        <div className="w-full h-1/3 group flex"> 
             <div className="w-10 h-[6px] bgOpacity mt-16 relative">
                 <span className="absolute w-5 h-5 rounded-full -top-2 -left-3 flex justify-center 
                 items-center bg-black bg-opacity-60">
@@ -21,11 +21,11 @@ function ResumeCard({title, subTitle, result , des}){
                     </div>
 
                     <div>
-                        <p>{result}</p>
+                        <p className="px-4 py-2 text-designColor bg-black bg-opacity-25 rounded-lg flex justify-center items-center shadow-shadowOne text-sm font-medium">{result}</p>
                     </div>
-
+                        
                 </div>
-                
+                <p>{des}</p>
             </div>    
             </div>
     );

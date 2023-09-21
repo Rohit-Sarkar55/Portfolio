@@ -1,9 +1,9 @@
 import React from 'react';
-import { ProjectsData } from './ProjectsData';
+import { ProjectsData } from "../projects/ProjectsData";
 import Title from "../layouts/Title";
 import ProjectsCard from './ProjectsCard';
-import { devImg } from '../../assets';
-const Projects = () => {
+
+function Project () {
   return (
     <section
       id="projects"
@@ -16,13 +16,13 @@ const Projects = () => {
         />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 xl:gap-14">
-        {ProjectsData.map((item , index) =>{
+        {ProjectsData.map((item , index) =>(
             
-            return <ProjectsCard key={index} title={item.title}  des={item.des} src = {item.src.devImg} />
-        })}     
+            <ProjectsCard key={index} title={item.title}  des={item.des} src={item.src.devImg} />
+        ))}     
       </div>
     </section>
   );
 }
 
-export default Projects;
+export default Project;

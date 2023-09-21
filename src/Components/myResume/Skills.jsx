@@ -1,63 +1,66 @@
 import React from "react";
 import ResumeCard from "./ResumeCard";
 import { motion } from "framer-motion";
+import LevelBar from "../layouts/LevelBar";
 
 
 function Skills(){
     return (
     <motion.div initial={{ opacity: 0 }}
         animate={{ opacity: 1, transition: { duration: 0.5 } }} 
-        className="flex gap-20">
+        className="mt-10 flex gap-20 border-l-[6px] border-black border-opacity-30">
 
-    <div className="bg-green-600 w-1/2">   
-    <div className="py-12 font-titleFont"> 
-        <p className="text-sm text-designColor tracking-[4px]">Details</p>
-        <h2 className="font-bold text-4xl"> Design Skills </h2>
+    <div className="w-full flex flex-col gap-10">   
+    
+    
+    <div className="py-12 font-titleFont flex group">
+        <div className="w-10 h-[6px] bgOpacity mt-16 relative">
+            <span className="absolute w-5 h-5 rounded-full -top-2 -left-3 flex justify-center 
+                    items-center bg-black bg-opacity-60">
+                        <span className="w-3 h-3 rounded-full bg-bodyColor inline-flex group-hover:bg-designColor duration-300"></span>
+
+            </span>
+        </div>
+        <div className="w-full bgOpacity py-8 pl-10">
+            {/* <p className="text-sm text-designColor tracking-[4px]">Details</p> */}
+            <h2 className="font-bold text-4xl"> Design Skills </h2>
+
+            <div className="mt-14 w-full grid grid-cols-2 gap-20">
+                <LevelBar />
+                <LevelBar />
+                <LevelBar />
+            </div>
+        </div>
+        
     </div>
-    <div className="mt-14 w-full flex flex-col gap-6">
-        <div className="overflow-x-hidden">
-            <p className="text-sm uppercase font-medium">Photoshop</p>
-            <span className="w-full h-2 bgOpacity inline-flex rounded-md mt-2">
-                <motion.span 
-                    initial ={{x: "-100%" , opacity : 0}}
-                    animate ={{x: 0 , opacity : 1}}
-                    transition={{duration : 0.5 , delay : 0.5}}
-                    
-                 className="w-full h-full bg-gradient-to-r from-blue-600 via-pink-500 to-red-500 rounded-md relative">
-                    <span className="absolute -top-7 right-0">100%</span>
-                </motion.span>
+
+        {/* //////////////////////////////// */}
+
+
+    <div className="py-12 font-titleFont flex group">
+        <div className="w-10 h-[6px] bgOpacity mt-16 relative">
+            <span className="absolute w-5 h-5 rounded-full -top-2 -left-3 flex justify-center 
+                    items-center bg-black bg-opacity-60">
+                        <span className="w-3 h-3 rounded-full bg-bodyColor inline-flex group-hover:bg-designColor duration-300"></span>
+
             </span>
         </div>
+        <div className="w-full bgOpacity py-8 pl-10">
+            {/* <p className="text-sm text-designColor tracking-[4px]">Details</p> */}
+            <h2 className="font-bold text-4xl"> Design Skills </h2>
 
-        <div className="overflow-x-hidden">
-            <p className="text-sm uppercase font-medium">Photoshop</p>
-            <span className="w-full h-2 bgOpacity inline-flex rounded-md mt-2">
-            <motion.span 
-                    initial ={{x: "-100%" , opacity : 0}}
-                    animate ={{x: 0 , opacity : 1}}
-                    transition={{duration : 0.5 , delay : 0.5}}
-                    
-                 className="w-full h-full bg-gradient-to-r from-blue-600 via-pink-500 to-red-500 rounded-md relative">
-                    <span className="absolute -top-7 right-0">100%</span>
-                </motion.span>
-            </span>
+            <div className="mt-14 w-full grid grid-cols-2 gap-20">
+                <LevelBar />
+                <LevelBar />
+                <LevelBar />
+            </div>
         </div>
-
-        <div className="overflow-x-hidden">
-            <p className="text-sm uppercase font-medium">Photoshop</p>
-            <span className="w-full h-2 bgOpacity inline-flex rounded-md mt-2">
-                <motion.span 
-                    initial ={{x: "-100%" , opacity : 0}}
-                    animate ={{x: 0 , opacity : 1}}
-                    transition={{duration : 0.5 , delay : 0.5}}
-                    
-                 className="w-full h-full bg-gradient-to-r from-blue-600 via-pink-500 to-red-500 rounded-md relative">
-                    <span className="absolute -top-7 right-0">100%</span>
-                </motion.span>
-            </span>
-        </div>
-
+        
     </div>
+
+
+
+    
     </div>
     
 
@@ -72,7 +75,7 @@ function Skills(){
 
 
 
-    <div className="w-1/2 bg-blue-600">
+    {/* <div className="w-1/2 bg-blue-600">
     <div >   
     <div className="py-12 font-titleFont"> 
         <p className="text-sm text-designColor tracking-[4px]">Details</p>
@@ -83,7 +86,7 @@ function Skills(){
         
     </div>
     </div>
-    </div>
+    </div> */}
 
     </motion.div>
     );

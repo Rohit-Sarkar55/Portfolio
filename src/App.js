@@ -4,6 +4,7 @@ import Banner from './Components/Banners/Banner';
 import Features from './Components/Features';
 import Navbar from './Components/Navbar';
 import Contacts from './Components/contact/Contacts';
+import Footer from './Components/footer/Footer';
 import Resume from './Components/myResume/Resume';
 import Project from './Components/projects/Project';
 import Testimonial from './Components/testimonial/Testimonial';
@@ -26,6 +27,7 @@ function App() {
         <Resume />
         <Testimonial />
         <Contacts />
+        <Footer />
       </div>
     </div>
   );

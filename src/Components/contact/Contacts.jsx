@@ -25,17 +25,23 @@ function Contacts(){
     const handleSend = (e)=>{
         e.preventDefault();
         if (username === "") {
+            setSuccessMsg("");
             setErrMsg("Username is required!");
           } else if (phoneNumber === "") {
             setErrMsg("Phone number is required!");
+            setSuccessMsg("");
           } else if (email === "") {
             setErrMsg("Please give your Email!");
+            setSuccessMsg("");
           } else if (!emailValidation(email)) {
             setErrMsg("Give a valid Email!");
+            setSuccessMsg("");
           } else if (subject === "") {
             setErrMsg("Plese give your Subject!");
+            setSuccessMsg("");
           } else if (message === "") {
             setErrMsg("Message is required!");
+            setSuccessMsg("");
           } else {
             setSuccessMsg(
               `Thank you dear ${username}, Your Messages has been sent Successfully!`
@@ -77,7 +83,9 @@ function Contacts(){
                             <p className="text-sm text-gray-400 tracking-wide uppercase">Your Name</p>
                             <input onChange={(e)=>{
                                 setUsername(e.target.value);
-                            }} className="contactInput" type="text" value={username} />
+                            }} className={
+                                `${errMsg === "Username is required!" && "outline-designColor"} contactInput`}
+                     type="text" value={username} />
                         </div>
 
 
@@ -85,7 +93,10 @@ function Contacts(){
                             <p className="text-sm text-gray-400 tracking-wide uppercase">Phone No</p>
                             <input onChange={(e)=>{
                                 setPhoneNumber(e.target.value);
-                            }} className="contactInput" type="text" value={phoneNumber} />
+                            }} className={`${
+                      errMsg === "Phone number is required!" &&
+                      "outline-designColor"
+                    } contactInput`} type="text" value={phoneNumber} />
                         </div>
                         
                     </div>
@@ -96,7 +107,10 @@ function Contacts(){
                         <p className="text-sm text-gray-400 tracking-wide uppercase">Email</p>
                         <input onChange={(e)=>{
                                 setEmail(e.target.value);
-                            }} className="contactInput" type="email" value={email} />
+                            }} className={`${
+                    errMsg === "Please give your Email!" &&
+                    "outline-designColor"
+                  } contactInput`} type="email" value={email} />
                     </div>
 
 
@@ -104,7 +118,10 @@ function Contacts(){
                         <p className="text-sm text-gray-400 tracking-wide uppercase">Subject</p>
                         <input onChange={(e)=>{
                                 setSubject(e.target.value);
-                            }} className="contactInput" type="text" value={subject}/>
+                            }} className={`${
+                    errMsg === "Plese give your Subject!" &&
+                    "outline-designColor"
+                  } contactInput`} type="text" value={subject}/>
                     </div>
 
 
@@ -112,7 +129,9 @@ function Contacts(){
                         <p className="text-sm text-gray-400 tracking-wide uppercase">Message</p>
                         <textarea onChange={(e)=>{
                                 setMessage(e.target.value);
-                            }} className="contactTextArea" rows="7" type="text" value={message} />
+                            }} className={`${
+                    errMsg === "Message is required!" && "outline-designColor"
+                  } contactTextArea`} rows="7" type="text" value={message} />
                     </div>
                     
 

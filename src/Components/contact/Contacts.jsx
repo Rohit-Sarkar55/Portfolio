@@ -1,9 +1,13 @@
-import React , {useState} from "react";
+import { useRef } from "react";
+import React , {useState}  from "react";
 import Title from "../layouts/Title";
 import ContactLeft from "./ContactLeft";
-
+import emailjs from '@emailjs/browser';
 
 function Contacts(){
+
+
+    const form = useRef();
     const [username, setUsername] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
     const [email, setEmail] = useState("");
@@ -24,6 +28,22 @@ function Contacts(){
   
     const handleSend = (e)=>{
         e.preventDefault();
+
+        const serviceId = process.env.REACT_APP_SERVICE_ID 
+        const templateId = process.env.REACT_APP_TEMPLATE_ID 
+        const publicKey = process.env.REACT_APP_PUBLIC_KEY
+
+      
+        emailjs.sendForm(serviceId, templateId, form.current, publicKey)
+      .then((result) => {
+          console.log(result.text);
+      }, (error) => {
+          console.log(error.text);
+      });
+  
+
+
+
         if (username === "") {
             setSuccessMsg("");
             setErrMsg("Username is required!");
@@ -71,7 +91,7 @@ function Contacts(){
               <div className="w-full lgl:w-[60%] h-full bg-gradient-to-r from-[#1e2024] to-[#23272b] 
               flex flex-col p-8 gap-8 rounded-lg shadow-shadowOne">
                 
-                <form className="w-full flex flex-col gap-4 py-2">
+                <form ref={form} className="w-full flex flex-col gap-4 py-2">
                     {
                         errMsg && <p className="errorMsg">{errMsg}</p>
                     }
@@ -85,7 +105,7 @@ function Contacts(){
                                 setUsername(e.target.value);
                             }} className={
                                 `${errMsg === "Username is required!" && "outline-designColor"} contactInput`}
-                     type="text" value={username} />
+                     type="text" value={username} name="user_name"/>
                         </div>
 
 
@@ -96,7 +116,7 @@ function Contacts(){
                             }} className={`${
                       errMsg === "Phone number is required!" &&
                       "outline-designColor"
-                    } contactInput`} type="text" value={phoneNumber} />
+                    } contactInput`} type="text" value={phoneNumber}  name="user_ph_num"/>
                         </div>
                         
                     </div>
@@ -110,7 +130,7 @@ function Contacts(){
                             }} className={`${
                     errMsg === "Please give your Email!" &&
                     "outline-designColor"
-                  } contactInput`} type="email" value={email} />
+                  } contactInput`} type="email" value={email}  name="user_email"/>
                     </div>
 
 
@@ -121,7 +141,7 @@ function Contacts(){
                             }} className={`${
                     errMsg === "Plese give your Subject!" &&
                     "outline-designColor"
-                  } contactInput`} type="text" value={subject}/>
+                  } contactInput`} type="text" value={subject} name="subject"/>
                     </div>
 
 
@@ -131,7 +151,7 @@ function Contacts(){
                                 setMessage(e.target.value);
                             }} className={`${
                     errMsg === "Message is required!" && "outline-designColor"
-                  } contactTextArea`} rows="7" type="text" value={message} />
+                  } contactTextArea`} rows="7" type="text" value={message}  name="message"/>
                     </div>
                     
 

@@ -33,7 +33,7 @@ function Contacts(){
         const templateId = process.env.REACT_APP_TEMPLATE_ID 
         const publicKey = process.env.REACT_APP_PUBLIC_KEY
 
-      console.log("Your Public Key is " , publicKey);
+      console.log("Your Keys are " , publicKey , templateId , serviceId);
         emailjs.sendForm(serviceId, templateId, form.current, publicKey)
       .then((result) => {
           console.log(result.text);

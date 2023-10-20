@@ -1,6 +1,6 @@
 import React from "react";
 
-function ResumeCard({title, subTitle, result , des}){
+function ResumeCard({title, stream, subTitle, result , des}){
     return (
         <div className="w-full h-1/3 group flex"> 
             <div className="w-10 h-[6px] bgOpacity mt-16 relative">
@@ -15,6 +15,7 @@ function ResumeCard({title, subTitle, result , des}){
                 
                     <div>
                     <h3 className="text-xl md:text-2xl font-semibold group-hover:text-white duration-300">{title}</h3>
+                    {stream && <h3 className="text-xl mt-2 font-semibold text-gray-600 group-hover:text-white duration-300">{stream}</h3>}
                     <p className="text-sm mt-2 text-gray-400 group-hover:text-white duration-300">{subTitle}</p>
                     </div>
 

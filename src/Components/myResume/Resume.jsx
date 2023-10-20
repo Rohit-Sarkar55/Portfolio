@@ -2,9 +2,10 @@ import React from "react";
 import { useState } from "react";
 import Title from "../layouts/Title";
 import Education from "./Education";
-import Skills from "./Skills";
+// import Skills from "./Skill/Skills";
 import Achievements from "./Achievements";
 import Experience from "./Experience";
+import RenderSkills from "./Skill/RenderSkills";
 
 
 function Resume(){
@@ -80,7 +81,7 @@ function Resume(){
         educationData && <Education />
     }
     {
-        skillData && <Skills />
+        skillData && <RenderSkills />
     }
     {
         experienceData && <Experience />
